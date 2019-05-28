@@ -1,4 +1,5 @@
-# consistent-hashing-wasm
+# consistent-hashing-wasm [![Build Status](https://travis-ci.org/azu/consistent-hashing-wasm.svg?branch=master)](https://travis-ci.org/azu/consistent-hashing-wasm)
+
 
 [Consistent hashing](https://en.wikipedia.org/wiki/Consistent_hashing) algorithm written by AssemblyScript.
 
