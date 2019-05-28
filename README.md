@@ -1,6 +1,6 @@
 # consistent-hashing-wasm
 
-consistent hashing algorithm written by AssemblyScript.
+[Consistent hashing](https://en.wikipedia.org/wiki/Consistent_hashing) algorithm written by AssemblyScript.
 
 It is based on [dakatsuka/node-consistent-hashing: A pure JavaScript implementation of Consistent Hashing](https://github.com/dakatsuka/node-consistent-hashing) implementation.
 
