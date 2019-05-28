@@ -48,6 +48,7 @@
     }
     */
     // remove
+    console.log("Delete key", nodeIds[0]);
     consistentHashing.remove(nodeIds[0]);
     // remap
     const reNodeIdByNameMap = new Map();
