@@ -47,7 +47,6 @@
       7 => [ 128 ]
     }
     */
-    // remove
     console.log("Delete key", nodeIds[0]);
     consistentHashing.remove(nodeIds[0]);
     // remap
