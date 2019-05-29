@@ -47,8 +47,9 @@
       7 => [ 128 ]
     }
     */
-    console.log("Delete key", nodeIds[0]);
+    console.log("Delete key: nodeIds:0 and 8");
     consistentHashing.remove(nodeIds[0]);
+    consistentHashing.remove(nodeIds[8]);
     // remap
     const reNodeIdByNameMap = new Map();
     nameIds.forEach(name => {

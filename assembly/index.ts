@@ -18,12 +18,7 @@ function simpleHash(keyId: i32): i32 {
 }
 
 function compare(v1: i32, v2: i32): i32 {
-    if (v1 > v2) {
-        return 1;
-    } else if (v1 < v2) {
-        return -1
-    }
-    return v1 > v2 ? 1 : v1 < v2 ? -1 : 0;
+    return v1 - v2;
 }
 
 
@@ -43,7 +38,7 @@ export function match(key: KeyId): NodeId | null {
 export function add(node: NodeId): void {
     _nodes.push(node);
     for (let i = 0; i < _replicas; i++) {
-        let number = Math.pow(i, 2) as i32;
+        let number = i * i;
         let key = simpleHash(node + number);
         _keys.push(key);
         _ring.set(key, node);
@@ -60,7 +55,7 @@ export function remove(node: NodeId): void {
     }
 
     for (var i = 0; i < _replicas; i++) {
-        let number = Math.pow(i, 2) as i32;
+        let number = i * i;
         let key = simpleHash(node + number);
 
         _ring.delete(key);
@@ -84,7 +79,7 @@ export function getNodePosition(hash: i32): i32 {
     }
 
     while (lower <= upper) {
-        idx = <i32>Math.floor((lower + upper) / 2);
+        idx = lower + ((upper - lower) >> 1);
         comp = compare(_keys[idx], hash);
 
         if (comp === 0) {
